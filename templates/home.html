@@ -1,0 +1,11 @@
+{% extends 'layout/default.html' %}
+{% block title %}
+    Home
+{% endblock title %}
+{% block content %}
+    <h1 style="text-align: center;">Home</h1>
+    <a href="{% url 'doctors:index' %}">Index</a>
+    <ul>
+        {% for doctor in doctors %}<li>{{ doctor.user.get_full_name }}</li>{% endfor %}
+    </ul>
+{% endblock content %}
